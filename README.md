@@ -4,7 +4,7 @@ Helpful extensions for the Unity PlayerPrefs sub-system
 
 ## Installation instructions
 - Open your project manifest file (`MyProject/Packages/manifest.json`).
-- Add `"com.debox.teleport": "https://github.com/debox-dev/playerprefs.git"` to the `dependencies` list.
+- Add `"com.debox.playerprefs": "https://github.com/debox-dev/playerprefs.git"` to the `dependencies` list.
 - Open or focus on Unity Editor to resolve packages.
 
 
