@@ -17,6 +17,11 @@ namespace DeBox.PlayerPrefs
         /// Delete the object from player prefs
         /// </summary>
         public abstract void Delete();
+
+        /// <summary>
+        /// Indicates that the PlayerPref value is set
+        /// </summary>
+        public abstract bool IsSet { get; }
         
         /// <summary>
         /// Writes the value to PlayerPrefs
@@ -84,13 +89,17 @@ namespace DeBox.PlayerPrefs
             _defaultValue = defaultValue;
         }
         
-        private bool IsValueSet()
+        public override bool IsSet
         {
-            if (string.IsNullOrEmpty(KeyName))
+            get
             {
-                throw new Exception("Not initialized");
+                if (string.IsNullOrEmpty(KeyName))
+                {
+                    throw new Exception("Not initialized");
+                }
+
+                return UnityEngine.PlayerPrefs.HasKey(KeyName);
             }
-            return UnityEngine.PlayerPrefs.HasKey(KeyName);
         }
 
         private T GetValue()
@@ -101,7 +110,7 @@ namespace DeBox.PlayerPrefs
             }
             if (!_isCached)
             {
-                if (IsValueSet())
+                if (IsSet)
                 {
                     _cachedValue = ReadValue();
                 }
