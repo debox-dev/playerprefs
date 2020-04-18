@@ -1,0 +1,8 @@
+{
+	"name": "com.debox.playerprefs",
+	"description": "Unity PlayerPrefs extensions",
+	"version": "0.0.1",
+	"unity": "2019.3",
+	"displayName": "DeBox PlayerPrefs",
+	"dependencies": {}
+}
