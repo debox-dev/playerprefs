@@ -213,5 +213,31 @@ namespace DeBox.PlayerPrefs
         }
     }
 
+    /// <summary>
+    /// PlayerPrefs double object store
+    ///
+    /// The double is split to two integers
+    /// </summary>
+    public class PlayerPrefsDouble : SimplePlayerPrefsValue<double>
+    {
+        private const int ACCURACY = 10000000;
+        public PlayerPrefsDouble() : base() {}
+        public PlayerPrefsDouble(string keyName, double defaultValue) : base(keyName, defaultValue) {}
+        protected override void WriteValue(double value)
+        {
+            var real = (int)(value - System.Math.Floor(value));
+            var fraction = (int)((value - real) * ACCURACY);
+            UnityEngine.PlayerPrefs.SetInt(KeyName + "-real", real);
+            UnityEngine.PlayerPrefs.SetInt(KeyName + "-fraction", fraction);
+        }
 
+        protected override double ReadValue()
+        {
+            var real = UnityEngine.PlayerPrefs.GetInt(KeyName + "-real", 0);
+            var fraction = UnityEngine.PlayerPrefs.GetInt(KeyName + "-fraction", 0);
+            double value = real;
+            value += fraction / (double)ACCURACY;
+            return value;
+        }
+    }
 }

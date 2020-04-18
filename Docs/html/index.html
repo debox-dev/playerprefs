@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.18"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>DeBox PlayerPrefs: DeBox PlayerPrefs</title>
+<title>DeBox PlayerPrefs: Main Page</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -60,49 +60,11 @@ $(function() {
 </iframe>
 </div>
 
-<div class="PageDoc"><div class="header">
+<div class="header">
   <div class="headertitle">
-<div class="title"><a class="el" href="namespace_de_box.html">DeBox</a> PlayerPrefs </div>  </div>
+<div class="title">DeBox PlayerPrefs Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> Helpful extensions for the Unity PlayerPrefs sub-system</p>
-<h1><a class="anchor" id="autotoc_md1"></a>
-Installation instructions</h1>
-<ul>
-<li>Open your project manifest file (<code>MyProject/Packages/manifest.json</code>).</li>
-<li>Add <code>"com.debox.playerprefs": "https://github.com/debox-dev/playerprefs.git"</code> to the <code>dependencies</code> list.</li>
-<li>Open or focus on Unity Editor to resolve packages.</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md2"></a>
-Requirements</h1>
-<ul>
-<li>Unity 2019 or higher.</li>
-</ul>
-<h1><a class="anchor" id="autotoc_md3"></a>
-Examples</h1>
-<div class="fragment"><div class="line">using DeBox.PlayerPrefs;</div>
-<div class="line"> </div>
-<div class="line">public class MyClass</div>
-<div class="line">{</div>
-<div class="line">   private readonly PlayerPrefsInt _playerGold = new PlayerPrefsInt(&quot;gold&quot;, 0);</div>
-<div class="line"> </div>
-<div class="line">   public void GetGold()</div>
-<div class="line">   {</div>
-<div class="line">       return _playerGold.Value;</div>
-<div class="line">   }</div>
-<div class="line"> </div>
-<div class="line">   public void AddGold(int value):</div>
-<div class="line">   {</div>
-<div class="line">       _playerGold.Value += value;</div>
-<div class="line">   }</div>
-<div class="line"> </div>
-<div class="line">   public void ResetGold()</div>
-<div class="line">   {</div>
-<div class="line">       _playerGold.Delete();</div>
-<div class="line">       // _playerGold.Value will return 0 now</div>
-<div class="line">   }</div>
-<div class="line">}</div>
-</div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
