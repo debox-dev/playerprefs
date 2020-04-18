@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace DeBox.PlayerPrefs
 {
@@ -33,7 +34,7 @@ namespace DeBox.PlayerPrefs
         /// Reads the value from PlayerPrefs
         /// </summary>
         /// <returns>The high-level value</returns>
-        protected abstract T ReadValue();
+        public abstract T ReadValue();
     }
 
     /// <summary>
@@ -149,7 +150,7 @@ namespace DeBox.PlayerPrefs
             UnityEngine.PlayerPrefs.SetString(KeyName, value);
         }
 
-        protected override string ReadValue()
+        public override string ReadValue()
         {
             return UnityEngine.PlayerPrefs.GetString(KeyName, string.Empty);
         }
@@ -169,7 +170,7 @@ namespace DeBox.PlayerPrefs
             UnityEngine.PlayerPrefs.SetInt(KeyName, value ? 1 : 0);
         }
 
-        protected override bool ReadValue()
+        public override bool ReadValue()
         {
             return UnityEngine.PlayerPrefs.GetInt(KeyName, 0) > 0;
         }
@@ -189,7 +190,7 @@ namespace DeBox.PlayerPrefs
             UnityEngine.PlayerPrefs.SetInt(KeyName, value);
         }
 
-        protected override int ReadValue()
+        public override int ReadValue()
         {
             return UnityEngine.PlayerPrefs.GetInt(KeyName, 0);
         }
@@ -207,7 +208,7 @@ namespace DeBox.PlayerPrefs
             UnityEngine.PlayerPrefs.SetFloat(KeyName, value);
         }
 
-        protected override float ReadValue()
+        public override float ReadValue()
         {
             return UnityEngine.PlayerPrefs.GetFloat(KeyName, 0);
         }
@@ -220,24 +221,38 @@ namespace DeBox.PlayerPrefs
     /// </summary>
     public class PlayerPrefsDouble : SimplePlayerPrefsValue<double>
     {
-        private const int ACCURACY = 10000000;
+        private const int ACCURACY = 1000000000;
         public PlayerPrefsDouble() : base() {}
         public PlayerPrefsDouble(string keyName, double defaultValue) : base(keyName, defaultValue) {}
         protected override void WriteValue(double value)
         {
-            var real = (int)(value - System.Math.Floor(value));
-            var fraction = (int)((value - real) * ACCURACY);
-            UnityEngine.PlayerPrefs.SetInt(KeyName + "-real", real);
-            UnityEngine.PlayerPrefs.SetInt(KeyName + "-fraction", fraction);
+            var n = BitConverter.DoubleToInt64Bits(value);
+            var components = Long2Int(n);
+            UnityEngine.PlayerPrefs.SetInt(KeyName + "-0", components[0]);
+            UnityEngine.PlayerPrefs.SetInt(KeyName + "-1", components[1]);
         }
 
-        protected override double ReadValue()
+        public override double ReadValue()
         {
-            var real = UnityEngine.PlayerPrefs.GetInt(KeyName + "-real", 0);
-            var fraction = UnityEngine.PlayerPrefs.GetInt(KeyName + "-fraction", 0);
-            double value = real;
-            value += fraction / (double)ACCURACY;
+            var component0 = UnityEngine.PlayerPrefs.GetInt(KeyName + "-0", 0);
+            var component1 = UnityEngine.PlayerPrefs.GetInt(KeyName + "-1", 0);
+            var n = Int2Long(component0, component1);
+            var value = BitConverter.Int64BitsToDouble(n);
             return value;
+        }
+        
+        private int[] Long2Int(long a) {
+            int a1 = (int)(a & uint.MaxValue);
+            int a2 = (int)(a >> 32);
+            return new int[] { a1, a2 };
+        }
+
+        private long Int2Long(int a1, int a2)
+        {
+            long b = a2;
+            b = b << 32;
+            b = b | (uint)a1;
+            return b;
         }
     }
 }
