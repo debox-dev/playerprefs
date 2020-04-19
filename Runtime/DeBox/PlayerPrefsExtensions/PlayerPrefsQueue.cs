@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DeBox.PlayerPrefs
+namespace DeBox.PlayerPrefsExtensions
 {
     public class QueueFullException : Exception
     {

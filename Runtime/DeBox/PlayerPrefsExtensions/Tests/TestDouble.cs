@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace DeBox.PlayerPrefs.Tests
+namespace DeBox.PlayerPrefsExtensions.Tests
 {
     public class TestDouble : MonoBehaviour
     {

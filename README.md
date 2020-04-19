@@ -14,7 +14,7 @@ Helpful extensions for the Unity PlayerPrefs sub-system
 ## Examples
 
 ```
-using DeBox.PlayerPrefs;
+using DeBox.PlayerPrefsExtensions;
 
 public class MyClass
 {

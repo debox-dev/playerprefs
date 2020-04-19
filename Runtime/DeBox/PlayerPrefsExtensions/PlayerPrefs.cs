@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace DeBox.PlayerPrefs
+namespace DeBox.PlayerPrefsExtensions
 {
     /// <summary>
     /// Abstract class describing a PlayerPrefs valus
