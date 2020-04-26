@@ -78,7 +78,7 @@ namespace DeBox.PlayerPrefsExtensions
             }
 
             var itemPref = new T();
-            itemPref.Initialize(_keyPrefix + ":item:" + _insertIndex.Value.ToString(), default(K));
+            itemPref.Initialize(_keyPrefix + ":item:" + _fetchIndex.Value.ToString(), default(K));
             var result = itemPref.Value;
             itemPref.Delete();
             _fetchIndex.Value = GetNextIndex(_fetchIndex.Value);
