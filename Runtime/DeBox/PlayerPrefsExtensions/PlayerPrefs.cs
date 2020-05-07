@@ -57,6 +57,13 @@ namespace DeBox.PlayerPrefsExtensions
         }
 
         /// <summary>
+        /// Create an uninitialized prefs
+        /// </summary>
+        public SimplePlayerPrefsValue() : base()
+        {
+        }
+
+        /// <summary>
         /// Initialize the PlayerPref object with the Pref KeyName and the default value
         /// </summary>
         /// <param name="keyName">Name of the Unity PlayerPref key</param>
@@ -134,6 +141,8 @@ namespace DeBox.PlayerPrefsExtensions
     /// </summary>
     public class PlayerPrefsString : SimplePlayerPrefsValue<string>
     {
+        public PlayerPrefsString() : base() {}
+
         public PlayerPrefsString(string keyName, string defaultValue) : base(keyName, defaultValue) {}
             
         protected override void WriteValue(string value)
@@ -153,6 +162,7 @@ namespace DeBox.PlayerPrefsExtensions
     /// </summary>
     public class PlayerPrefsBool : SimplePlayerPrefsValue<bool>
     {
+        public PlayerPrefsBool() : base() {}
         public PlayerPrefsBool(string keyName, bool defaultValue) : base(keyName, defaultValue) {}
         
         protected override void WriteValue(bool value)
@@ -164,6 +174,8 @@ namespace DeBox.PlayerPrefsExtensions
         {
             return UnityEngine.PlayerPrefs.GetInt(KeyName, 0) > 0;
         }
+
+ 
     }
 
     /// <summary>
@@ -171,6 +183,7 @@ namespace DeBox.PlayerPrefsExtensions
     /// </summary>
     public class PlayerPrefsInt : SimplePlayerPrefsValue<int>
     {
+        public PlayerPrefsInt() : base() {}
         public PlayerPrefsInt(string keyName, int defaultValue) : base(keyName, defaultValue) {}
         protected override void WriteValue(int value)
         {
@@ -188,7 +201,9 @@ namespace DeBox.PlayerPrefsExtensions
     /// </summary>
     public class PlayerPrefsFloat : SimplePlayerPrefsValue<float>
     {
+        public PlayerPrefsFloat() : base() {} 
         public PlayerPrefsFloat(string keyName, float defaultValue) : base(keyName, defaultValue) {}
+        
         protected override void WriteValue(float value)
         {
             UnityEngine.PlayerPrefs.SetFloat(KeyName, value);
@@ -222,6 +237,11 @@ namespace DeBox.PlayerPrefsExtensions
     /// </summary>
     public class PlayerPrefsDouble : SimplePlayerPrefsValue<double>
     {
+        /// <summary>
+        /// Create a new uninitialized PlayerPrefsDouble
+        /// </summary>
+        public PlayerPrefsDouble() : base() {}
+        
         /// <summary>
         /// Create a new PlayerPrefsDouble
         /// </summary>
