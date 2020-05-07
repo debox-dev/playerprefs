@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value_51',['Value',['../class_de_box_1_1_player_prefs_1_1_player_prefs_value.html#a726a392fefe28819fe5405a0e13e48c6',1,'DeBox::PlayerPrefs::PlayerPrefsValue']]]
+  ['value_57',['Value',['../class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_value.html#a2837495f4a832ab7c795d9df28e97bd2',1,'DeBox::PlayerPrefsExtensions::PlayerPrefsValue']]]
 ];

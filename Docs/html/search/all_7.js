@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['value_23',['Value',['../class_de_box_1_1_player_prefs_1_1_player_prefs_value.html#a726a392fefe28819fe5405a0e13e48c6',1,'DeBox::PlayerPrefs::PlayerPrefsValue']]]
+  ['testdouble_24',['TestDouble',['../class_de_box_1_1_player_prefs_extensions_1_1_tests_1_1_test_double.html',1,'DeBox::PlayerPrefsExtensions::Tests']]]
 ];

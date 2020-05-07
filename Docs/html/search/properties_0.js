@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['isset_50',['IsSet',['../class_de_box_1_1_player_prefs_1_1_player_prefs_value.html#a10a0b4be6d5f4719462436b017bc3b1b',1,'DeBox::PlayerPrefs::PlayerPrefsValue']]]
+  ['isset_56',['IsSet',['../class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_value.html#afc8583933067d57c83dfbcebcfc671a4',1,'DeBox::PlayerPrefsExtensions::PlayerPrefsValue']]]
 ];

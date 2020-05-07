@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('functions_func.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -63,37 +83,45 @@ $(function() {
 <div class="contents">
 &#160;<ul>
 <li>Delete()
-: <a class="el" href="class_de_box_1_1_player_prefs_1_1_player_prefs_value.html#a9817ecf13f07315d55d346cc2a028306">DeBox.PlayerPrefs.PlayerPrefsValue&lt; T &gt;</a>
-, <a class="el" href="class_de_box_1_1_player_prefs_1_1_simple_player_prefs_value.html#abda35d3f7f2fbb683d606099124977e5">DeBox.PlayerPrefs.SimplePlayerPrefsValue&lt; T &gt;</a>
+: <a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_value.html#a3772fe64c5b208d84f0d10b408bcba9d">DeBox.PlayerPrefsExtensions.PlayerPrefsValue&lt; T &gt;</a>
+, <a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_simple_player_prefs_value.html#abd0de74dcd653d66bcea68d6e67d5632">DeBox.PlayerPrefsExtensions.SimplePlayerPrefsValue&lt; T &gt;</a>
 </li>
 <li>Dequeue()
-: <a class="el" href="class_de_box_1_1_player_prefs_1_1_player_prefs_queue.html#adf01d5e4c7e31111bbde57a2a84ab945">DeBox.PlayerPrefs.PlayerPrefsQueue&lt; T, K &gt;</a>
+: <a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_queue.html#a2a90a6c8db598914289434e30f2b6073">DeBox.PlayerPrefsExtensions.PlayerPrefsQueue&lt; T, K &gt;</a>
 </li>
 <li>Enqueue()
-: <a class="el" href="class_de_box_1_1_player_prefs_1_1_player_prefs_queue.html#ae43b39142414f424897bfcf745b04999">DeBox.PlayerPrefs.PlayerPrefsQueue&lt; T, K &gt;</a>
+: <a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_queue.html#a01104a0a8755a808f816dac10b683b42">DeBox.PlayerPrefsExtensions.PlayerPrefsQueue&lt; T, K &gt;</a>
 </li>
 <li>Initialize()
-: <a class="el" href="class_de_box_1_1_player_prefs_1_1_simple_player_prefs_value.html#a93344c539bb6fb247d70af920abb092e">DeBox.PlayerPrefs.SimplePlayerPrefsValue&lt; T &gt;</a>
+: <a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_simple_player_prefs_value.html#ab8f3047963828f8d834f09a38ff3667f">DeBox.PlayerPrefsExtensions.SimplePlayerPrefsValue&lt; T &gt;</a>
+</li>
+<li>PlayerPrefsDouble()
+: <a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_double.html#aff89d4aff2096796b517080e1b821de6">DeBox.PlayerPrefsExtensions.PlayerPrefsDouble</a>
 </li>
 <li>PlayerPrefsQueue()
-: <a class="el" href="class_de_box_1_1_player_prefs_1_1_player_prefs_queue.html#a4e4d4ed5f507f3ad047db0fa4fb68c71">DeBox.PlayerPrefs.PlayerPrefsQueue&lt; T, K &gt;</a>
+: <a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_queue.html#a48515365df753a03060917eebf446742">DeBox.PlayerPrefsExtensions.PlayerPrefsQueue&lt; T, K &gt;</a>
 </li>
 <li>ReadValue()
-: <a class="el" href="class_de_box_1_1_player_prefs_1_1_player_prefs_value.html#a0047bdc1200f3afd7ca4bdfcaf89cc39">DeBox.PlayerPrefs.PlayerPrefsValue&lt; T &gt;</a>
+: <a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_double.html#ac76639169a00e458556ccd6e9447b9e6">DeBox.PlayerPrefsExtensions.PlayerPrefsDouble</a>
+, <a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_value.html#a20e9b9be5e4c4bee77646365722970c7">DeBox.PlayerPrefsExtensions.PlayerPrefsValue&lt; T &gt;</a>
 </li>
 <li>SimplePlayerPrefsValue()
-: <a class="el" href="class_de_box_1_1_player_prefs_1_1_simple_player_prefs_value.html#ab508a19f1c2a53e8b17d01e7aa5562fb">DeBox.PlayerPrefs.SimplePlayerPrefsValue&lt; T &gt;</a>
+: <a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_simple_player_prefs_value.html#a8e31a7a45c776c82fee4e3b804254ead">DeBox.PlayerPrefsExtensions.SimplePlayerPrefsValue&lt; T &gt;</a>
 </li>
 <li>WriteValue()
-: <a class="el" href="class_de_box_1_1_player_prefs_1_1_player_prefs_value.html#a3b866724ea91e19a6d696d428039416c">DeBox.PlayerPrefs.PlayerPrefsValue&lt; T &gt;</a>
+: <a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_double.html#a87cf58ecb5c5058909a28849615bad94">DeBox.PlayerPrefsExtensions.PlayerPrefsDouble</a>
+, <a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_value.html#aee85c5b513e86c877ab6a73f86ff2053">DeBox.PlayerPrefsExtensions.PlayerPrefsValue&lt; T &gt;</a>
 </li>
 </ul>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.18
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
+  </ul>
+</div>
 </body>
 </html>

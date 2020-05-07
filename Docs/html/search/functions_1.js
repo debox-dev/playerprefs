@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['enqueue_44',['Enqueue',['../class_de_box_1_1_player_prefs_1_1_player_prefs_queue.html#ae43b39142414f424897bfcf745b04999',1,'DeBox::PlayerPrefs::PlayerPrefsQueue']]]
+  ['enqueue_48',['Enqueue',['../class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_queue.html#a01104a0a8755a808f816dac10b683b42',1,'DeBox::PlayerPrefsExtensions::PlayerPrefsQueue']]]
 ];

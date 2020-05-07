@@ -57,13 +57,6 @@ namespace DeBox.PlayerPrefsExtensions
         }
 
         /// <summary>
-        /// Create an uninitialized prefs
-        /// </summary>
-        public SimplePlayerPrefsValue() : base()
-        {
-        }
-
-        /// <summary>
         /// Initialize the PlayerPref object with the Pref KeyName and the default value
         /// </summary>
         /// <param name="keyName">Name of the Unity PlayerPref key</param>
@@ -141,8 +134,6 @@ namespace DeBox.PlayerPrefsExtensions
     /// </summary>
     public class PlayerPrefsString : SimplePlayerPrefsValue<string>
     {
-        public PlayerPrefsString() : base() {}
-
         public PlayerPrefsString(string keyName, string defaultValue) : base(keyName, defaultValue) {}
             
         protected override void WriteValue(string value)
@@ -162,7 +153,6 @@ namespace DeBox.PlayerPrefsExtensions
     /// </summary>
     public class PlayerPrefsBool : SimplePlayerPrefsValue<bool>
     {
-        public PlayerPrefsBool() : base() {}
         public PlayerPrefsBool(string keyName, bool defaultValue) : base(keyName, defaultValue) {}
         
         protected override void WriteValue(bool value)
@@ -174,8 +164,6 @@ namespace DeBox.PlayerPrefsExtensions
         {
             return UnityEngine.PlayerPrefs.GetInt(KeyName, 0) > 0;
         }
-
- 
     }
 
     /// <summary>
@@ -183,7 +171,6 @@ namespace DeBox.PlayerPrefsExtensions
     /// </summary>
     public class PlayerPrefsInt : SimplePlayerPrefsValue<int>
     {
-        public PlayerPrefsInt() : base() {}
         public PlayerPrefsInt(string keyName, int defaultValue) : base(keyName, defaultValue) {}
         protected override void WriteValue(int value)
         {
@@ -201,7 +188,6 @@ namespace DeBox.PlayerPrefsExtensions
     /// </summary>
     public class PlayerPrefsFloat : SimplePlayerPrefsValue<float>
     {
-        public PlayerPrefsFloat() : base() {}
         public PlayerPrefsFloat(string keyName, float defaultValue) : base(keyName, defaultValue) {}
         protected override void WriteValue(float value)
         {
@@ -217,25 +203,67 @@ namespace DeBox.PlayerPrefsExtensions
     /// <summary>
     /// PlayerPrefs double object store
     ///
-    /// The double is split to two integers
+    /// The double is split to two integers as Unity.PlayerPrefs has no "double" setter/getter
+    ///
+    /// <example>
+    /// <code>
+    /// public class MyComponent : MonoBehaviour // You don't have to be in a MonoBehaviour to use this
+    /// {
+    ///    private PlayerPrefsDouble _myDoublePref = new PlayerPrefsDouble("doubleKey1", 0);
+    ///
+    ///    private void Start()
+    ///    {
+    ///        _myDoublePref.Value = _myDoublePref.Value + 0.111f; // Stop start the game, this will persist
+    ///    }
+    /// }
+    /// 
+    /// </code>
+    /// </example>
     /// </summary>
     public class PlayerPrefsDouble : SimplePlayerPrefsValue<double>
     {
-        private const int ACCURACY = 1000000000;
-        public PlayerPrefsDouble() : base() {}
+        /// <summary>
+        /// Create a new PlayerPrefsDouble
+        /// </summary>
+        /// <param name="keyName">The PlayerPrefs prefix for keys of this instance</param>
+        /// <param name="defaultValue">The default value to return if not set in PlayerPrefs</param>
         public PlayerPrefsDouble(string keyName, double defaultValue) : base(keyName, defaultValue) {}
+
+        private string SubKeyName0 => KeyName + "-0";
+        private string SubKeyName1 => KeyName + "-1";
+
+        /// <summary>
+        /// Overrides IsSet of SimplePlayerPrefsValue, checks that both 32bit keys that describe the 64 double
+        /// are set in player prefs
+        /// </summary>
+        public override bool IsSet => PlayerPrefs.HasKey(SubKeyName0) && PlayerPrefs.HasKey(SubKeyName1);
+
+        /// <summary>
+        /// Implementation of WriteValue of SimplePlayerPrefsValue
+        ///
+        /// Writes two integer playerprefs that together describe the double
+        /// Each integer is a 32bit part of the 64bit double
+        /// </summary>
+        /// <param name="value">The double value to store</param>
         protected override void WriteValue(double value)
         {
             var n = BitConverter.DoubleToInt64Bits(value);
             var components = Long2Int(n);
-            UnityEngine.PlayerPrefs.SetInt(KeyName + "-0", components[0]);
-            UnityEngine.PlayerPrefs.SetInt(KeyName + "-1", components[1]);
+            PlayerPrefs.SetInt(SubKeyName0, components[0]);
+            PlayerPrefs.SetInt(SubKeyName1, components[1]);
         }
 
+        /// <summary>
+        /// Implementation of ReadValue of SimplePlayerPrefsValue
+        ///
+        /// Read two integer playerprefs that together describe the double
+        /// Each integer is a 32bit part of the 64bit double
+        /// </summary>
+        /// <returns>The double value</returns>
         public override double ReadValue()
         {
-            var component0 = UnityEngine.PlayerPrefs.GetInt(KeyName + "-0", 0);
-            var component1 = UnityEngine.PlayerPrefs.GetInt(KeyName + "-1", 0);
+            var component0 = PlayerPrefs.GetInt(SubKeyName0, 0);
+            var component1 = PlayerPrefs.GetInt(SubKeyName1, 0);
             var n = Int2Long(component0, component1);
             var value = BitConverter.Int64BitsToDouble(n);
             return value;

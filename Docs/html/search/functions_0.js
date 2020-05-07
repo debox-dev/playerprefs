@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['delete_42',['Delete',['../class_de_box_1_1_player_prefs_1_1_player_prefs_value.html#a9817ecf13f07315d55d346cc2a028306',1,'DeBox.PlayerPrefs.PlayerPrefsValue.Delete()'],['../class_de_box_1_1_player_prefs_1_1_simple_player_prefs_value.html#abda35d3f7f2fbb683d606099124977e5',1,'DeBox.PlayerPrefs.SimplePlayerPrefsValue.Delete()']]],
-  ['dequeue_43',['Dequeue',['../class_de_box_1_1_player_prefs_1_1_player_prefs_queue.html#adf01d5e4c7e31111bbde57a2a84ab945',1,'DeBox::PlayerPrefs::PlayerPrefsQueue']]]
+  ['delete_46',['Delete',['../class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_value.html#a3772fe64c5b208d84f0d10b408bcba9d',1,'DeBox.PlayerPrefsExtensions.PlayerPrefsValue.Delete()'],['../class_de_box_1_1_player_prefs_extensions_1_1_simple_player_prefs_value.html#abd0de74dcd653d66bcea68d6e67d5632',1,'DeBox.PlayerPrefsExtensions.SimplePlayerPrefsValue.Delete()']]],
+  ['dequeue_47',['Dequeue',['../class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_queue.html#a2a90a6c8db598914289434e30f2b6073',1,'DeBox::PlayerPrefsExtensions::PlayerPrefsQueue']]]
 ];

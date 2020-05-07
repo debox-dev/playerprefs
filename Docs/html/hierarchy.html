@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -46,6 +50,22 @@ $(function() {
 /* @license-end */</script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('hierarchy.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -68,29 +88,34 @@ $(function() {
 <div class="textblock">This inheritance list is sorted roughly, but not completely, alphabetically:</div><div class="directory">
 <div class="levels">[detail level <span onclick="javascript:toggleLevel(1);">1</span><span onclick="javascript:toggleLevel(2);">2</span>]</div><table class="directory">
 <tr id="row_0_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_0_" class="arrow" onclick="toggleFolder('0_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><b>Exception</b></td><td class="desc"></td></tr>
-<tr id="row_0_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_1_1_queue_empty_exception.html" target="_self">DeBox.PlayerPrefs.QueueEmptyException</a></td><td class="desc"></td></tr>
-<tr id="row_0_1_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_1_1_queue_full_exception.html" target="_self">DeBox.PlayerPrefs.QueueFullException</a></td><td class="desc"></td></tr>
-<tr id="row_1_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_1_1_player_prefs_queue.html" target="_self">DeBox.PlayerPrefs.PlayerPrefsQueue&lt; T, K &gt;</a></td><td class="desc">A <a class="el" href="namespace_de_box_1_1_player_prefs.html">PlayerPrefs</a> stored queue </td></tr>
-<tr id="row_2_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_2_" class="arrow" onclick="toggleFolder('2_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_1_1_player_prefs_value.html" target="_self">DeBox.PlayerPrefs.PlayerPrefsValue&lt; T &gt;</a></td><td class="desc">Abstract class describing a <a class="el" href="namespace_de_box_1_1_player_prefs.html">PlayerPrefs</a> valus </td></tr>
-<tr id="row_2_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_1_1_simple_player_prefs_value.html" target="_self">DeBox.PlayerPrefs.SimplePlayerPrefsValue&lt; T &gt;</a></td><td class="desc">An abstract, simple implementation of <a class="el" href="class_de_box_1_1_player_prefs_1_1_player_prefs_value.html" title="Abstract class describing a PlayerPrefs valus">PlayerPrefsValue</a> for single-key premitive values </td></tr>
-<tr id="row_3_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_3_" class="arrow" onclick="toggleFolder('3_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_1_1_simple_player_prefs_value.html" target="_self">DeBox.PlayerPrefs.SimplePlayerPrefsValue&lt; bool &gt;</a></td><td class="desc"></td></tr>
-<tr id="row_3_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_1_1_player_prefs_bool.html" target="_self">DeBox.PlayerPrefs.PlayerPrefsBool</a></td><td class="desc"><a class="el" href="namespace_de_box_1_1_player_prefs.html">PlayerPrefs</a> bool object store </td></tr>
-<tr id="row_4_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_4_" class="arrow" onclick="toggleFolder('4_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_1_1_simple_player_prefs_value.html" target="_self">DeBox.PlayerPrefs.SimplePlayerPrefsValue&lt; double &gt;</a></td><td class="desc"></td></tr>
-<tr id="row_4_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_1_1_player_prefs_double.html" target="_self">DeBox.PlayerPrefs.PlayerPrefsDouble</a></td><td class="desc"><a class="el" href="namespace_de_box_1_1_player_prefs.html">PlayerPrefs</a> double object store </td></tr>
-<tr id="row_5_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_5_" class="arrow" onclick="toggleFolder('5_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_1_1_simple_player_prefs_value.html" target="_self">DeBox.PlayerPrefs.SimplePlayerPrefsValue&lt; float &gt;</a></td><td class="desc"></td></tr>
-<tr id="row_5_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_1_1_player_prefs_float.html" target="_self">DeBox.PlayerPrefs.PlayerPrefsFloat</a></td><td class="desc"><a class="el" href="namespace_de_box_1_1_player_prefs.html">PlayerPrefs</a> float object store </td></tr>
-<tr id="row_6_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_6_" class="arrow" onclick="toggleFolder('6_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_1_1_simple_player_prefs_value.html" target="_self">DeBox.PlayerPrefs.SimplePlayerPrefsValue&lt; int &gt;</a></td><td class="desc"></td></tr>
-<tr id="row_6_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_1_1_player_prefs_int.html" target="_self">DeBox.PlayerPrefs.PlayerPrefsInt</a></td><td class="desc"><a class="el" href="namespace_de_box_1_1_player_prefs.html">PlayerPrefs</a> int object store </td></tr>
-<tr id="row_7_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_7_" class="arrow" onclick="toggleFolder('7_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_1_1_simple_player_prefs_value.html" target="_self">DeBox.PlayerPrefs.SimplePlayerPrefsValue&lt; string &gt;</a></td><td class="desc"></td></tr>
-<tr id="row_7_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_1_1_player_prefs_string.html" target="_self">DeBox.PlayerPrefs.PlayerPrefsString</a></td><td class="desc"><a class="el" href="namespace_de_box_1_1_player_prefs.html">PlayerPrefs</a> string object store </td></tr>
+<tr id="row_0_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_queue_empty_exception.html" target="_self">DeBox.PlayerPrefsExtensions.QueueEmptyException</a></td><td class="desc"></td></tr>
+<tr id="row_0_1_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_queue_full_exception.html" target="_self">DeBox.PlayerPrefsExtensions.QueueFullException</a></td><td class="desc"></td></tr>
+<tr id="row_1_"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_1_" class="arrow" onclick="toggleFolder('1_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><b>MonoBehaviour</b></td><td class="desc"></td></tr>
+<tr id="row_1_0_" class="even"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_tests_1_1_test_double.html" target="_self">DeBox.PlayerPrefsExtensions.Tests.TestDouble</a></td><td class="desc"></td></tr>
+<tr id="row_2_"><td class="entry"><span style="width:16px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_queue.html" target="_self">DeBox.PlayerPrefsExtensions.PlayerPrefsQueue&lt; T, K &gt;</a></td><td class="desc">A PlayerPrefs stored queue </td></tr>
+<tr id="row_3_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_3_" class="arrow" onclick="toggleFolder('3_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_value.html" target="_self">DeBox.PlayerPrefsExtensions.PlayerPrefsValue&lt; T &gt;</a></td><td class="desc">Abstract class describing a PlayerPrefs valus </td></tr>
+<tr id="row_3_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_simple_player_prefs_value.html" target="_self">DeBox.PlayerPrefsExtensions.SimplePlayerPrefsValue&lt; T &gt;</a></td><td class="desc">An abstract, simple implementation of <a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_value.html" title="Abstract class describing a PlayerPrefs valus">PlayerPrefsValue</a> for single-key premitive values </td></tr>
+<tr id="row_4_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_4_" class="arrow" onclick="toggleFolder('4_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_simple_player_prefs_value.html" target="_self">DeBox.PlayerPrefsExtensions.SimplePlayerPrefsValue&lt; bool &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_4_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_bool.html" target="_self">DeBox.PlayerPrefsExtensions.PlayerPrefsBool</a></td><td class="desc">PlayerPrefs bool object store </td></tr>
+<tr id="row_5_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_5_" class="arrow" onclick="toggleFolder('5_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_simple_player_prefs_value.html" target="_self">DeBox.PlayerPrefsExtensions.SimplePlayerPrefsValue&lt; double &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_5_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_double.html" target="_self">DeBox.PlayerPrefsExtensions.PlayerPrefsDouble</a></td><td class="desc">PlayerPrefs double object store </td></tr>
+<tr id="row_6_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_6_" class="arrow" onclick="toggleFolder('6_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_simple_player_prefs_value.html" target="_self">DeBox.PlayerPrefsExtensions.SimplePlayerPrefsValue&lt; float &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_6_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_float.html" target="_self">DeBox.PlayerPrefsExtensions.PlayerPrefsFloat</a></td><td class="desc">PlayerPrefs float object store </td></tr>
+<tr id="row_7_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_7_" class="arrow" onclick="toggleFolder('7_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_simple_player_prefs_value.html" target="_self">DeBox.PlayerPrefsExtensions.SimplePlayerPrefsValue&lt; int &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_7_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_int.html" target="_self">DeBox.PlayerPrefsExtensions.PlayerPrefsInt</a></td><td class="desc">PlayerPrefs int object store </td></tr>
+<tr id="row_8_" class="even"><td class="entry"><span style="width:0px;display:inline-block;">&#160;</span><span id="arr_8_" class="arrow" onclick="toggleFolder('8_')">&#9660;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_simple_player_prefs_value.html" target="_self">DeBox.PlayerPrefsExtensions.SimplePlayerPrefsValue&lt; string &gt;</a></td><td class="desc"></td></tr>
+<tr id="row_8_0_"><td class="entry"><span style="width:32px;display:inline-block;">&#160;</span><span class="icona"><span class="icon">C</span></span><a class="el" href="class_de_box_1_1_player_prefs_extensions_1_1_player_prefs_string.html" target="_self">DeBox.PlayerPrefsExtensions.PlayerPrefsString</a></td><td class="desc">PlayerPrefs string object store </td></tr>
 </table>
 </div><!-- directory -->
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by &#160;<a href="http://www.doxygen.org/index.html">
-<img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.18
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.18 </li>
+  </ul>
+</div>
 </body>
 </html>

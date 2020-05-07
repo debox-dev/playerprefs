@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['queueemptyexception_32',['QueueEmptyException',['../class_de_box_1_1_player_prefs_1_1_queue_empty_exception.html',1,'DeBox::PlayerPrefs']]],
-  ['queuefullexception_33',['QueueFullException',['../class_de_box_1_1_player_prefs_1_1_queue_full_exception.html',1,'DeBox::PlayerPrefs']]]
+  ['queueemptyexception_34',['QueueEmptyException',['../class_de_box_1_1_player_prefs_extensions_1_1_queue_empty_exception.html',1,'DeBox::PlayerPrefsExtensions']]],
+  ['queuefullexception_35',['QueueFullException',['../class_de_box_1_1_player_prefs_extensions_1_1_queue_full_exception.html',1,'DeBox::PlayerPrefsExtensions']]]
 ];
